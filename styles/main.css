@@ -348,6 +348,19 @@ Project cards
   max-width: 400px;
 }
 
+.card__details {
+  display: flex;
+}
+
+.tags {
+  flex: 1;
+}
+
+.tags,
+.posted-date {
+  font-size: calc(var(--base-size) / var(--type-scale));
+}
+
 /*********
 Background Circles
 **********/
