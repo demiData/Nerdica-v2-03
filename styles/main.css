@@ -1,0 +1,626 @@
+@import url("https://fonts.googleapis.com/css?family=Public+Sans:400,500,500i,600,700,900&display=swap");
+
+:root {
+  --background-color: #f2f2f2;
+
+  --main-font-color: #3f4242;
+  --secondary-font-color: rgba(63, 66, 66, 0.8);
+
+  --main-nav-links: rgba(253, 94, 83, 10);
+
+  --color-transparent: rgba(238, 238, 238, 0);
+  --line-divider-light: rgba(26, 27, 27, 0.1);
+  --line-divider-light-2: rgba(64, 66, 66, 0.24);
+  --line-divider-light-3: rgba(134, 135, 135, 10);
+
+  --line-divider-dark-1: rgba(63, 66, 66, 10);
+
+  /****************
+ Root: Typography Set-Up
+*****************/
+
+  --headings-font: "Public Sans", sans-serif;
+  --font-regular: 400;
+  --font-medium: 500;
+
+  --font-bold: 600;
+  --font-x-bold: 900;
+
+  --base-size: 1rem;
+  --type-scale: 1.5;
+  --line-height: 1.65;
+
+  --h4: calc(var(--base-size) * var(--type-scale));
+  --h3: calc(var(--h4) * var(--type-scale));
+  --h2: calc(var(--h3) * var(--type-scale));
+  --h1: calc(var(--h2) * var(--type-scale));
+}
+
+/*********
+Base
+**********/
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.mobile-copy {
+  display: none;
+}
+
+/* Some Typography */
+
+body {
+  font-family: "Public Sans", sans-serif;
+  background: var(--background-color);
+  /* overflow: hidden; */
+  line-height: var(--line-height);
+}
+
+/*********
+Grid
+**********/
+
+/* .playground {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-columns:
+    24px
+    minmax(90px, 1fr)
+    3%
+    repeat(4, minmax(190px, 1fr))
+    24px;
+
+  
+  grid-auto-rows: auto;
+  grid-template-areas: ". nav . main main main main  .";
+} */
+
+.playground {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 24px 1fr 2% 4fr 24px;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". nav . main .";
+}
+
+.header {
+  position: relative;
+  grid-area: nav;
+  /* background-color: fuchsia; */
+}
+
+.main-section {
+  grid-area: main;
+  /* background-color: teal; */
+}
+
+/***********
+Typography
+*************/
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--secondary-font-color);
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: var(--h4);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+p,
+a {
+  font-size: var(--base-size);
+}
+
+.small,
+.text-small {
+  font-size: calc(var(--base-size) / var(--type-scale));
+}
+
+/*********
+Utilities
+**********/
+
+.x-sm-line {
+  width: 15px;
+  height: 1px;
+  background-color: black;
+  color: black;
+}
+
+.divide {
+  width: 50px;
+  height: 1.3px;
+  background-color: var(--line-divider-light);
+  margin: 24px 0;
+}
+
+/*********
+Main Navigation
+**********/
+
+#desk-side-nav {
+  position: fixed;
+  width: 20%;
+  height: 100vh;
+  margin-left: 24px;
+}
+
+.nerdica-logo {
+  max-width: 190px;
+  min-width: 130px;
+  width: 64%;
+  margin-bottom: 56px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-transparent);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+.nerdica-logo:hover {
+  border-bottom: 2px solid var(--main-nav-links);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 56px 0;
+}
+
+.main-nav-links {
+  width: 100px;
+}
+
+.main-nav > li {
+  margin: 24px 0;
+}
+
+.nav-links {
+  font-weight: 400;
+  color: var(--secondary-font-color);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+a:hover {
+  color: var(--main-nav-links);
+}
+
+.list-link {
+  text-decoration: none;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.list-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--main-nav-links);
+  transition: width 0.3s;
+}
+
+.list-link:hover::after {
+  width: 100%;
+  /* transition: width 0.3s; */
+}
+
+/*********
+Headings
+**********/
+
+h1 {
+  font-weight: var(--font-x-bold);
+  color: var(--main-font-color);
+}
+
+.l-page {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+h1.main-intro__heading {
+  text-align: right;
+  color: var(--main-font-color);
+}
+
+p.main-intro__p {
+  text-align: right;
+  width: 70%;
+  float: right;
+  font-weight: var(--font-regular);
+  color: var(--secondary-font-color);
+}
+
+/******************
+Layout
+ *******************/
+.main-section {
+  padding: 24px 0;
+}
+
+.page-title {
+  display: flex;
+  align-items: baseline;
+  /* padding-bottom: 1px; */
+  border-bottom: 2px solid silver;
+  color: var(--line-divider-light-2);
+}
+
+.page__heading {
+  flex: 1;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-rows: auto;
+  margin-top: 32px;
+}
+
+.project-card {
+  background-color: whitesmoke;
+  margin: 16px 16px;
+
+  padding: 1em;
+}
+
+/* .project-card:not(:last-child) {
+  margin-right: 16px;
+} */
+
+/*********
+Background Circles
+**********/
+
+#sunlit {
+  position: absolute;
+  width: 60%;
+  right: -100px;
+  z-index: 3;
+}
+
+#sunsetOrange {
+  width: 50%;
+  position: absolute;
+  left: 375px;
+  bottom: 150px;
+  z-index: 2;
+}
+
+#volietHill {
+  width: 30%;
+  position: absolute;
+  left: 150px;
+  bottom: 40px;
+  z-index: 1;
+}
+
+/******************
+ MEDIA QUERIES 
+ *******************/
+
+@media screen and (max-width: 770px) {
+  body {
+    /* background-color: blue; */
+  }
+
+  :root {
+    --base-size: 0.87rem;
+  }
+
+  .playground {
+    grid-template-columns: 16px 1fr 16px;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+      ". nav ."
+      ". main .";
+  }
+
+  .header {
+    grid-area: nav;
+    /* background-color: antiquewhite; */
+    padding: 2.1em;
+  }
+
+  .main-section {
+    grid-area: main;
+  }
+
+  /* .nerdica-logo,
+  .footer-copy {
+    visibility: hidden;
+  } */
+
+  .nerdica-logo {
+    max-width: 190px;
+    width: 8.5rem;
+    margin-top: -8px;
+    border-bottom: none;
+    position: fixed;
+    left: 16px;
+  }
+
+  .nerdica-logo:hover {
+    border-bottom: none;
+  }
+
+  .mobile-copy {
+    display: inline-block;
+  }
+
+  .desktop-footer {
+    display: none;
+  }
+
+  /* .nerdica-logo {
+    margin-top: 56px;
+    margin-left: 24px;
+    width: 200px;
+  } */
+
+  .divide {
+    margin-left: auto;
+    margin-right: 24px;
+  }
+
+  #desk-side-nav {
+    width: 100%;
+    height: 5px;
+    margin-left: 0;
+    background-color: var(--background-color);
+    box-shadow: 0 1px 32px rgba(156, 156, 156, 0.185),
+      0 2px 2px rgba(172, 172, 172, 0.1);
+  }
+
+  /* responsive mobile nav */
+
+  .list-link::after {
+    display: none;
+  }
+
+  .nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #fff;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  .nav-wrapper ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
+  .nav-wrapper ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 24px;
+  }
+
+  .nav-wrapper ul li:nth-child(1) a {
+    transition-delay: 0.2s;
+  }
+
+  .nav-wrapper ul li:nth-child(2) a {
+    transition-delay: 0.3s;
+  }
+
+  .nav-wrapper ul li:nth-child(3) a {
+    transition-delay: 0.4s;
+  }
+
+  .nav-wrapper ul li:nth-child(4) a {
+    transition-delay: 0.5s;
+  }
+
+  .nav-wrapper ul li:nth-child(5) a {
+    transition-delay: 0.7s;
+  }
+
+  .nav-wrapper ul li:nth-child(6) a {
+    transition-delay: 0.8s;
+  }
+
+  .nav-wrapper ul li:nth-child(7) a {
+    transition-delay: 0.9s;
+  }
+
+  .nav-wrapper ul li:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .nav-wrapper ul li a {
+    padding: 0 24px;
+    opacity: 0;
+    letter-spacing: 1.2px;
+    transform: translateX(-20px);
+    transition: all 0.2s ease;
+  }
+
+  .nav-btn {
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+  }
+
+  .nav-btn i {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--main-nav-links);
+    border-radius: 2px;
+    margin-left: 14px;
+  }
+
+  .nav-btn i:nth-child(1) {
+    margin-top: 16px;
+  }
+
+  .nav-btn i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+  }
+  .nav-btn i:nth-child(3) {
+    margin-top: 4px;
+  }
+
+  #nav:checked + .nav-btn {
+    transform: rotate(45deg);
+  }
+
+  #nav:checked + .nav-btn i {
+    background: var(--main-font-color);
+    transition: transform 0.2s ease;
+  }
+
+  #nav:checked + .nav-btn i:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  #nav:checked + .nav-btn i {
+    background: #000;
+    transition: transform 0.2s ease;
+  }
+
+  #nav:checked + .nav-btn i:nth-child(1) {
+    transform: translateY(6px) rotate(180deg);
+  }
+  #nav:checked + .nav-btn i:nth-child(2) {
+    opacity: 0;
+  }
+
+  #nav:checked + .nav-btn i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+  }
+
+  #nav:checked ~ .nav-wrapper {
+    z-index: 999;
+    opacity: 1;
+  }
+
+  #nav:checked ~ .nav-wrapper ul li a {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+/* .playground {
+    display: grid;
+    grid-template-columns: 16px repeat(2, minmax(260px, 1fr)) 16px;
+    grid-template-rows: 80px auto;
+
+    grid-template-areas:
+      ". nav nav ."
+      ".main main .";
+  } */
+
+/* .header {
+    grid-area: nav;
+  }
+
+  .main-section {
+    grid-area: main;
+  }
+
+  #desk-side-nav {
+    position: inherit;
+  } */
+
+/******************
+  Mobile Layout
+ *******************/
+
+/* @media (max-width: 1100px) {
+  body {
+    background-color: springgreen;
+  }
+
+  .playground {
+    display: grid;
+    grid-template-columns: 16px repeat(2, minmax(260px, 1fr)) 16px;
+    grid-template-rows: 100vh;
+    grid-auto-rows: auto;
+    grid-template-areas:
+      ". nav nav ."
+      ".main main .";
+  }
+
+  .header {
+    grid-area: nav;
+  }
+
+  .main-section {
+    grid-area: main;
+  }
+} */
