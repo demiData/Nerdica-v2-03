@@ -350,6 +350,7 @@ Project cards
 
 .card__details {
   display: flex;
+  margin-top: 8px;
 }
 
 .tags {
@@ -391,6 +392,13 @@ Background Circles
 /******************
  MEDIA QUERIES 
  *******************/
+
+@media screen and (max-width: 551px) {
+  .project-card {
+    width: 364px;
+    margin: 0 auto;
+  }
+}
 
 @media screen and (max-width: 770px) {
   body {
@@ -443,6 +451,10 @@ Background Circles
 
   .desktop-footer {
     display: none;
+  }
+
+  .page-title {
+    flex-direction: column;
   }
 
   /* .nerdica-logo {
@@ -611,6 +623,10 @@ Background Circles
   }
 
   .hidden {
+    display: none;
+  }
+
+  .nav-wrapper {
     display: none;
   }
 }

@@ -93,6 +93,10 @@
                 Here's something very important about the project and you should
                 hire me cuz I'm awesome.
               </p>
+              <div class="card__details">
+                <span class="tags">// UI Design // Prototype</span>
+                <span class="posted-date">Feb 27, 2020</span>
+              </div>
             </div>
             <div class="project-card__img">
               <img src="./images/imgsam.png" />
@@ -106,6 +110,10 @@
                 Here's something very important about the project and you should
                 hire me cuz I'm awesome.
               </p>
+              <div class="card__details">
+                <span class="tags">// UI Design // Prototype</span>
+                <span class="posted-date">Feb 27, 2020</span>
+              </div>
             </div>
             <div class="project-card__img">
               <img src="./images/imgsam.png" />
@@ -119,69 +127,56 @@
                 Here's something very important about the project and you should
                 hire me cuz I'm awesome.
               </p>
+              <div class="card__details">
+                <span class="tags">// UI Design // Prototype</span>
+                <span class="posted-date">Feb 27, 2020</span>
+              </div>
             </div>
             <div class="project-card__img">
               <img src="./images/imgsam.png" />
             </div>
           </div>
 
-          <div class="project-card">
-            <div class="porject-card__info">
-              <h3>Project Name</h3>
-              <p>
-                Here's something very important about the project and you should
-                hire me cuz I'm awesome.
-              </p>
-            </div>
-            <div class="project-card__img">
-              <img src="./images/imgsam.png" />
-            </div>
-          </div>
+        
+
+        
+
+        
+
+         
         </div>
-        <!-- <div class="main-intro">
-          <h1 class="main-intro__heading">
-            Creative Playground for Digital Explorations
-            Project
-          </h1>
-          <p class="main-intro__p">
-            And for understanding human interactions in the digital space
-          </p>
-        </div> -->
-        <!-- <img src="./images/Sunlit.svg" id="sunlit" />
-        <img src="./images/sunsetOrange.svg" id="sunsetOrange" />
-        <img src="./images/VioletHill.svg" id="volietHill" /> -->
-      </main>
+      
     </div>
 
     <script>
-      var header = document.getElementById("current");
-      var btns = header.getElementsByClassName("nav-links");
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-          var current = document.getElementsByClassName("active");
-          current[0].className = current[0].className.replace(" active", "");
-          this.className += " active";
-        });
-      }
-
-      // var el = document.createElement("output");
-      // document.body.append(el);
-      // Object.assign(el.style, {
-      //   position: "fixed",
-      //   bottom: 0,
-      //   left: 0,
-      //   background: "red",
-      //   color: "white",
-      //   padding: "5px",
-      //   fontSize: "11px",
-      //   opacity: 0.7
-      // });
-      // function updateOutput() {
-      //   var html = document.documentElement;
-      //   el.value = html.clientWidth + " × " + html.clientHeight;
+      // var header = document.getElementById("current");
+      // var btns = header.getElementsByClassName("nav-links");
+      // for (var i = 0; i < btns.length; i++) {
+      //   btns[i].addEventListener("click", function() {
+      //     var current = document.getElementsByClassName("active");
+      //     current[0].className = current[0].className.replace(" active", "");
+      //     this.className += " active";
+      //   });
       // }
-      // window.addEventListener("resize", updateOutput);
-      // updateOutput();
+
+      var el = document.createElement("output");
+      document.body.append(el);
+      Object.assign(el.style, {
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        background: "red",
+        color: "white",
+        padding: "5px",
+        fontSize: "11px",
+        opacity: 0.7
+      });
+      function updateOutput() {
+        var html = document.documentElement;
+        el.value = html.clientWidth + " × " + html.clientHeight;
+      }
+      window.addEventListener("resize", updateOutput);
+      updateOutput();
     </script>
   </body>
 </html>
