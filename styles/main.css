@@ -263,6 +263,14 @@ a:focus {
   /* transition: width 0.3s; */
 }
 
+.card-link {
+  color: var(--main-font-color);
+}
+
+.card-link:hover {
+  color: var(--secondary-font-color);
+}
+
 /*********
 Headings
 **********/
@@ -394,10 +402,10 @@ Background Circles
  *******************/
 
 @media screen and (max-width: 551px) {
-  .project-card {
+  /* .project-card {
     width: 364px;
     margin: 0 auto;
-  }
+  } */
 }
 
 @media screen and (max-width: 770px) {
@@ -622,11 +630,11 @@ Background Circles
     transform: translateX(0);
   }
 
-  .hidden {
+  /* .nav-wrapper {
     display: none;
-  }
+  } */
 
-  .nav-wrapper {
+  .hidden {
     display: none;
   }
 }
